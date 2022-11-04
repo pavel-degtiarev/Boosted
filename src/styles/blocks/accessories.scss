@@ -1,0 +1,77 @@
+.accessories__wrapper {
+	padding: 4rem 0;
+}
+
+.accessories__title {
+	text-align: center;
+	padding: 0 5rem;
+}
+
+.accessories__slider {
+	position: relative;
+	overflow: hidden;
+	padding: 0 1rem;
+	margin-top: 2rem;
+}
+
+.slider__slides {
+	list-style-type: none;
+	display: flex;
+	flex-direction: row;
+}
+
+.slider__element {
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-width: max-content;
+	cursor: pointer;
+
+	&:hover .element__title {
+		color: $redDark;
+	}
+}
+
+.element__title {
+	margin-top: 1.5rem;
+	text-align: center;
+	padding: 0 1rem;
+}
+
+.element__regular-price,
+.element__discount-price {
+	padding: 0 0.25rem;
+}
+
+.slider__arrow {
+	display: block;
+	position: absolute;
+
+	width: 4.4rem;
+	height: 4.4rem;
+	border-radius: 2.2rem;
+
+	top: 30%;
+
+	background-color: $white-transparent;
+	background-image: url("../../img/arrow.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+
+	transition: all 0.3s ease;
+	cursor: pointer;
+
+	&.arrow-left {
+		left: 0;
+	}
+
+	&.arrow-right {
+		left: 100%;
+		transform: translateX(-100%) scaleX(-1);
+	}
+
+	&:hover {
+		background-color: $white;
+	}
+}

@@ -1,0 +1,13 @@
+.notification {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 3rem;
+	background-color: $black;
+
+	& p {
+		display: block;
+		color: $white;
+		letter-spacing: 0.2rem;
+	}
+}

@@ -1,0 +1,17 @@
+$w-sm: 320;
+$w-in: 480;
+$w-md: 768;
+$w-lg: 1440;
+
+$width-small: $w-sm + px;
+$width-interim: $w-in + px;
+$width-medium: $w-md + px;
+$width-up-to-medium: 767 + px;
+$width-large: $w-lg + px;
+
+$red: rgb(255, 0, 0);
+$redDark: rgb(165, 0, 0);
+$black: rgb(0, 0, 0);
+$white: rgb(255, 255, 255);
+$white-transparent: rgba(255, 255, 255, 0.5);
+$grey: rgb(207, 207, 207);

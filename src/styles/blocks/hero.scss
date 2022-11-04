@@ -1,0 +1,151 @@
+.hero__wrapper {
+	position: relative;
+}
+
+.hero__image {
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+
+	@media (max-width: $width-medium) {
+		& img {
+			max-width: 200%;
+		}
+	}
+
+	@media (max-width: $width-interim) {
+		& img {
+			max-width: 300%;
+		}
+	}
+}
+
+.hero__header {
+	width: 80%;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	top: 4.5rem;
+	left: 50%;
+	transform: translateX(-50%);
+
+	@media (max-width: $width-small) {
+		width: 100%;
+		padding: 0 2rem;
+	}
+}
+
+.hero-header__title,
+.hero-header__text {
+	text-align: center;
+}
+
+.hero-header__text {
+	margin-top: 1.5rem;
+	letter-spacing: 1px;
+}
+
+.hero-header__buttons {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: auto;
+
+	margin-top: 2rem;
+
+	& .button {
+		flex-grow: 1;
+		color: $white;
+		margin: 0 0.5rem;
+	}
+
+	@media (max-width: $width-small) {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+
+		& .button {
+			margin-top: 1rem;
+		}
+	}
+}
+
+.hero__reviews {
+	width: 100%;
+	height: 8rem;
+	display: flex;
+	padding: 0 12rem;
+	background-color: $black;
+
+	@media (max-width: $width-medium) {
+		padding: 0;
+	}
+
+	@media (max-width: $width-interim) {
+		flex-wrap: wrap;
+		height: 16rem;
+	}
+
+	@media (max-width: $width-small) {
+		flex-direction: column;
+		height: auto;
+	}
+}
+
+.rewiews__logo {
+	display: block;
+	width: 25%;
+	content: "";
+	margin: 2rem;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+
+	&.electrek {
+		background-image: url("../../img/logo-electrek.png");
+	}
+
+	&.techcrunch {
+		background-image: url("../../img/logo-techcrunch.png");
+	}
+
+	&.popmech {
+		background-image: url("../../img/logo-popmech.png");
+	}
+
+	&.wired {
+		background-image: url("../../img/logo-wired.png");
+	}
+
+	@media (-webkit-min-device-pixel-ratio: 2) {
+		&.electrek {
+			background-image: url("../../img/logo-electrek@2x.png");
+		}
+
+		&.techcrunch {
+			background-image: url("../../img/logo-techcrunch@2x.png");
+		}
+
+		&.popmech {
+			background-image: url("../../img/logo-popmech@2x.png");
+		}
+
+		&.wired {
+			background-image: url("../../img/logo-wired@2x.png");
+		}
+	}
+
+	@media (max-width: $width-medium) {
+		margin: 1rem;
+	}
+
+	@media (max-width: $width-interim) {
+		width: 40%;
+		flex-grow: 1;
+	}
+
+	@media (max-width: $width-small) {
+		width: 100%;
+		height: 3rem;
+		margin: 1.5rem 0;
+	}
+}

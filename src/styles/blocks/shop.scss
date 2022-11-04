@@ -1,0 +1,268 @@
+.shop__wrapper {
+	margin: 4rem 0;
+}
+
+.shop__intro {
+	position: relative;
+	display: flex;
+	justify-content: center;
+
+	@media (max-width: $width-medium) {
+		& img {
+			max-width: 200%;
+		}
+	}
+
+	@media (max-width: $width-interim) {
+		& img {
+			max-width: 300%;
+		}
+	}
+}
+
+.shop-intro__image {
+	display: block;
+	overflow: hidden;
+}
+
+.shop-intro__header {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 50rem;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	@media (max-width: $width-medium) {
+		width: 80vw;
+		padding: 0 2rem;
+	}
+
+	@media (max-width: $width-small) {
+		width: 100vw;
+		padding: 0 2rem;
+	}
+}
+
+.shop-intro__announce {
+	margin-top: 4rem;
+}
+
+.shop-intro__title,
+.shop-intro__text {
+	margin-top: 1.5rem;
+	text-align: center;
+}
+
+.shop-intro__button {
+	margin-top: 3rem;
+	width: max-content;
+}
+
+.shop__rev {
+	margin: 4rem;
+	display: flex;
+	flex-direction: row;
+	height: 38rem;
+
+	@media (max-width: $width-medium) {
+		margin: 4rem 0;
+
+		display: grid;
+		grid-auto-flow: column;
+		grid-auto-rows: 1fr;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		gap: 20px 20px;
+		grid-template-areas:
+			"photo1 photo2"
+			"review review";
+	}
+
+	@media (max-width: $width-interim) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 2rem 0;
+		height: auto;
+	}
+}
+
+.rev__wrapper {
+	display: block;
+	width: calc(100% / 3);
+	margin: 0 1rem;
+
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	&.photo-1 {
+		background-image: url("../../img/rev-1.jpg");
+	}
+
+	&.photo-2 {
+		background-image: url("../../img/rev-2.jpg");
+	}
+
+	@media (-webkit-min-device-pixel-ratio: 2) {
+		&.photo-1 {
+			background-image: url("../../img/rev-1@2x.jpg");
+		}
+
+		&.photo-2 {
+			background-image: url("../../img/rev-2@2x.jpg");
+		}
+	}
+
+	@media (max-width: $width-medium) {
+		width: 100%;
+		margin: 0;
+	}
+
+	@media (max-width: $width-interim) {
+		width: 80vw;
+		flex-basis: 200px;
+	}
+
+	@media (max-width: $width-small) {
+		width: calc(100% - 4rem);
+		height: 100vw;
+		margin: 0;
+		margin-bottom: 2rem;
+	}
+}
+
+.rev__image {
+	display: block;
+}
+
+.rev__annotation {
+	grid-area: review;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0 3rem;
+
+	@media (max-width: $width-small) {
+		padding: 0;
+	}
+}
+
+.photo1 {
+	grid-area: photo1;
+}
+
+.photo2 {
+	grid-area: photo2;
+}
+
+.rev__text,
+.rev__button {
+	margin-top: 2rem;
+}
+
+.rev__button {
+	width: max-content;
+
+	@media (max-width: $width-small) {
+		width: 100%;
+	}
+}
+
+.shop__goods {
+	display: flex;
+	height: 48rem;
+
+	@media (max-width: $width-interim) {
+		flex-direction: column;
+		align-items: center;
+		height: auto;
+	}
+}
+
+.goods__item {
+	position: relative;
+	width: calc(100% / 3);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	overflow: hidden;
+
+	cursor: pointer;
+
+	&::after {
+		display: block;
+		content: "";
+		width: 100%;
+		height: 100%;
+
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+
+		transition: all 0.3s ease;
+	}
+
+	&:hover::after {
+		transform: scale(1.1);
+	}
+
+	&.stealth::after {
+		background-image: url("../../img/goods-stealth.jpg");
+	}
+
+	&.plus::after {
+		background-image: url("../../img/goods-plus.jpg");
+	}
+
+	&.mini::after {
+		background-image: url("../../img/goods-mini.jpg");
+	}
+
+	@media (-webkit-min-device-pixel-ratio: 2) {
+		&.stealth::after {
+			background-image: url("../../img/goods-stealth@2x.jpg");
+		}
+
+		&.plus::after {
+			background-image: url("../../img/goods-plus@2x.jpg");
+		}
+
+		&.mini::after {
+			background-image: url("../../img/goods-mini@2x.jpg");
+		}
+	}
+
+	@media (max-width: $width-interim) {
+		width: 100%;
+		height: 100vw;
+	}
+}
+
+.goods__title {
+	position: absolute;
+	color: $white;
+	text-align: center;
+	z-index: 2;
+	padding: 0 2rem;
+
+	&::after {
+		display: block;
+		position: absolute;
+		top: 150%;
+		left: 50%;
+		transform: translateX(-50%);
+
+		content: "In Stock";
+		@include text-base;
+		font-size: 1.8rem;
+		line-height: 2.3rem;
+		color: $white;
+	}
+}

@@ -1,0 +1,65 @@
+:root {
+	font-family: "Roboto", sans-serif;
+	font-size: 10px;
+}
+
+@mixin text-base {
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	color: $black;
+}
+
+.text-tiny {
+	@include text-base;
+	font-size: 1.2rem;
+	line-height: 1.5rem;
+}
+
+.text-normal {
+	@include text-base;
+	font-size: 1.5rem;
+	line-height: 1.9rem;
+}
+
+.title-big {
+	@include text-base;
+	font-size: 4.5rem;
+	line-height: 5rem;
+
+	@media (max-width: $width-small) {
+		font-size: 2.5rem;
+		line-height: 2.5rem;
+	}
+}
+
+.title-normal {
+	@include text-base;
+	font-size: 3.2rem;
+	line-height: 3.6rem;
+	
+	@media (max-width: $width-small) {
+		font-size: 2.5rem;
+		line-height: 2.5rem;
+	}
+}
+
+.title-small {
+	@include text-base;
+	font-size: 2.5rem;
+	line-height: 3rem;
+}
+
+.button-title {
+	@include text-base;
+	font-size: 1.4rem;
+	line-height: 2rem;
+
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: $white;
+}
+
+.text-accented {
+	color: $red;
+}
